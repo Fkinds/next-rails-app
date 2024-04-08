@@ -1,13 +1,14 @@
 import Link from "next/link"
 import { LogoutButton } from "./logoutButton"
-import { getCustomerSession } from "../functions/customer/getCustomerSession"
+import { getCustomerData } from "../functions/customer/getCustomerData"
 
 export const Header = async() => {
-  const session = getCustomerSession();
+  const customer = await getCustomerData();
+  console.log(customer)
   return (
     <>
       <header>
-        { session ? (
+        { { customer } ? (
           <>
             <ul className="nav">
               <li className="nav-item p-1">
