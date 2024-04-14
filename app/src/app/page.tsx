@@ -1,10 +1,17 @@
-import { Header } from "./components/header";
+import { Header } from "../components/header";
 
-export default function Home() {
+const Home = async () => {
+  // const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL as string
+  // const response = await fetch(baseUrl);
+  // const getPageData = await response.json();
+  // console.log(getPageData)
   return (
-    <>
-      root page
+    <div>
+      <p>root page</p>
+      <link rel="icon" href="data:,"></link>
       <Header />
-    </>
+    </div>
   )
-}
+};
+
+export default Home;

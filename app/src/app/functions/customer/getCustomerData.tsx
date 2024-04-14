@@ -1,7 +1,0 @@
-export const getCustomerData = async() => {
-  const res = await fetch("http://localhost:3000",{
-    method: "GET",
-  })
-  const customer = await res.json
-  return customer
-}

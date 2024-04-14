@@ -1,6 +1,7 @@
-import { logoutCustomer } from "../functions/customer/logoutCustomer";
+import { logoutCustomer } from "@/functions/customer/logoutCustomer";
 
-export const LogoutButton = async() => {
+
+export const LogoutButton = async () => {
   const handleAction = async () => {
     "use server";
     const res = await logoutCustomer();

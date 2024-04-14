@@ -1,10 +1,12 @@
-import { LoginButton } from "@/app/components/loginButton"
+import { LoginButton } from "@/components/loginButton";
 
-export const sessionNew = () => {
+export const SessionNew = async () => {
   return (
     <>
-      <div>sessionNew</div>
-      <LoginButton/>
+      <p>SessionNew</p>
+      <LoginButton />
     </>
   )
-}
+};
+
+export default SessionNew;

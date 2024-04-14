@@ -1,5 +1,12 @@
-export const page = () => {
+import { Header } from "@/components/header"
+
+const MyPage = async () => {
   return (
-    <div>my_page</div>
+    <>
+      <p>mypage</p>
+      <Header />
+    </>
   )
-}
+};
+
+export default MyPage
