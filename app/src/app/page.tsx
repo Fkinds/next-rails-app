@@ -1,4 +1,4 @@
-import { Header } from "../components/header";
+import { Header } from "./components/header";
 
 const Home = async () => {
   // const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL as string

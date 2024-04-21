@@ -1,10 +1,9 @@
-import { logoutCustomer } from "@/functions/customer/logoutCustomer";
-
+import { signOut } from "../auth";
 
 export const LogoutButton = async () => {
   const handleAction = async () => {
     "use server";
-    const res = await logoutCustomer();
+    const res = await signOut();
   };
   return (
     <>

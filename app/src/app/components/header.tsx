@@ -1,54 +1,16 @@
 import Link from "next/link"
 import { LogoutButton } from "./logoutButton"
-import { getCustomerData } from "@/functions/customer/getCustomerData";
+import { auth } from "../auth";
+import { LoginButton } from "./loginButton";
 
 
 export const Header = async () => {
-  // try{
-  //   const customer = await getCustomerData();
-  //   return (
-  //     <>
-  //       <header>
-  //           <ul className="nav">
-  //             <li className="nav-item p-1">
-  //               <Link href="/">
-  //                 <button type="button" className="btn btn-secondary btn-lg nav-link">LOGO</button>
-  //               </Link>
-  //             </li>
-  //             <li className="nav-item p-1">
-  //               <Link href="../customers/my_page">
-  //                 <button type="button" className="btn btn-secondary nav-link">about</button>
-  //               </Link>
-  //             </li>
-  //             <li className="nav-item p-1">
-  //               <Link href="../items">
-  //                 <button type="button" className="btn btn-secondary nav-link">商品一覧</button>
-  //               </Link>
-  //             </li>
-  //             <li className="nav-item p-1">
-  //               <Link href="../auth/new">
-  //                 <button type="button" className="btn btn-secondary nav-link">新規登録</button>
-  //               </Link>
-  //             </li>
-  //             <li className="nav-item p-1">
-  //               <Link href="../sessions/new">
-  //                 <button type="button" className="btn btn-secondary nav-link">ログイン</button>
-  //               </Link>
-  //             </li>
-  //           </ul>
-  //       </header>
-  //     </>
-  //   )
-  // } catch (error) {
-  //   console.error("Error fetching customer data:", error);
-  //     return null; // or display an error message
-  // }
+  const session = await auth();
   try{
-    const customer = await getCustomerData();
     return (
       <>
         <header>
-          { customer != null ? (
+          { session ? (
             <ul className="nav">
               <li className="nav-item p-1">
                 <Link href="/">
@@ -97,9 +59,7 @@ export const Header = async () => {
                 </Link>
               </li>
               <li className="nav-item p-1">
-                <Link href="../sessions/new">
-                  <button type="button" className="btn btn-secondary nav-link">ログイン</button>
-                </Link>
+                <LoginButton/>
               </li>
             </ul>
           )
