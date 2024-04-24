@@ -18,7 +18,7 @@ export const Header = async () => {
                 </Link>
               </li>
               <li className="nav-item p-1">
-                <Link href="../customers/my_page">
+                <Link href="../mypage">
                   <button type="button" className="btn btn-secondary nav-link">マイページ</button>
                 </Link>
               </li>
