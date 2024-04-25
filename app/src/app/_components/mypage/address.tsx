@@ -2,8 +2,8 @@ import { getAddressesData } from "@/app/_functions/mypage/getAddressesData";
 import { registerAddress } from "@/app/_functions/mypage/registerAddress";
 import Link from "next/link";
 
-export type addressType= {
-  id : number
+export type addressType = {
+  id: number
   name: string,
   address: string,
   zip_code: number,
@@ -11,9 +11,8 @@ export type addressType= {
 }
 
 export const Address = async () => {
-
+  
   const addresses = await getAddressesData();
-  console.log(addresses);
 
   const handleAction = async (formData: FormData) => {
     'use server'
