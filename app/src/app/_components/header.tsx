@@ -6,11 +6,11 @@ import { LoginButton } from "./loginButton";
 
 export const Header = async () => {
   const session = await auth();
-  try{
+  try {
     return (
       <>
         <header>
-          { session ? (
+          {session ? (
             <ul className="nav">
               <li className="nav-item p-1">
                 <Link href="/">
@@ -28,7 +28,7 @@ export const Header = async () => {
                 </Link>
               </li>
               <li className="nav-item p-1">
-                <Link href="../cart_items">
+                <Link href="/mypage/cart_item">
                   <button type="button" className="btn btn-secondary nav-link">カート</button>
                 </Link>
               </li>
@@ -59,7 +59,7 @@ export const Header = async () => {
                 </Link>
               </li>
               <li className="nav-item p-1">
-                <LoginButton/>
+                <LoginButton />
               </li>
             </ul>
           )
@@ -69,6 +69,6 @@ export const Header = async () => {
     )
   } catch (error) {
     console.error("Error fetching customer data:", error);
-      return null; // or display an error message
+    return null; // or display an error message
   }
 }
